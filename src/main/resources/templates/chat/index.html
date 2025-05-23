@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>トップページ</title>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<h1 th:text="${message}"></h1>
+	<p>><a th:href="@{/chat}">チャットルームに入る</a></p>
+	<!--	<form method="get" action="#" th:action="@{/confirm}">-->
+	<!--		<p>ToDo入力： <input type="text" name="content" th:value="*{content}"></p>-->
+	<!--		<p>優先度： <input type="text" name="priority" th:value="*{priority}"></p>-->
+	<!--		<p>チェックリスト： <input type="text" name="compFlag" th:value="*{compFlag}"></p>-->
+
+
+	<!--				<div th:if="${#fields.hasErrors('name1')}"  th:errors="*{name1}">エラー</div>-->
+	<!--				<div th:if="${#fields.hasErrors('comment')}"  th:errors="*{comment}">エラー</div>-->
+	<!--				<p>コメント： <input type="text" name="comment" th:value="*{comment}"></p>-->
+	<!--			</form>-->
+	<!--		<input type="submit" value="送信">-->
+
+</body>
+
+</html>

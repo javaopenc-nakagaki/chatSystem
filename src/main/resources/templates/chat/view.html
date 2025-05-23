@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>チャットルーム</title>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<h1 th:text="${message}"></h1>
+	<form method="get" action="#" th:action="@{/chat}" th:object="${chat}">
+		<p>
+			お名前： <input type="text" name="name" th:value="*{name}">
+			コメント： <input type="text" name="comment" th:value="*{comment}">
+			<input type="submit" value="送信">
+		</p>
+		</p><a href="" th:href="@{/h2-console}" target="_blank">H2コンソール(別タブで開く)</a>
+
+
+
+		<!--			<form method="get" action="#" th:action="@{/confirm}">-->
+		<!--				<p>ToDo入力： <input type="text" name="content" th:value="*{content}"></p>-->
+		<!--				<p>優先度： <input type="text" name="priority" th:value="*{priority}"></p>-->
+		<!--				<p>チェックリスト： <input type="text" name="compFlag" th:value="*{compFlag}"></p>-->
+
+
+		<!--						<div th:if="${#fields.hasErrors('name1')}"  th:errors="*{name1}">エラー</div>-->
+		<!--						<div th:if="${#fields.hasErrors('comment')}"  th:errors="*{comment}">エラー</div>-->
+		<!--						<p>コメント： <input type="text" name="comment" th:value="*{comment}"></p>-->
+		<!--					</form>-->
+		<!--				<input type="submit" value="送信">-->
+
+
+
+</body>
+
+</html>
