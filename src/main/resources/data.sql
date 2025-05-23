@@ -1,3 +1,1 @@
- INSERT INTO chat (name,comment) VALUES ('山田','頑張ります！');
-
- 
+ INSERT INTO chat (name,comment) VALUES ('taro','ようこそ');

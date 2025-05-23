@@ -4,34 +4,31 @@
 <head>
 	<title>チャットルーム</title>
 	<meta charset="utf-8" />
+	<link rel="stylesheet" th:href="@{/style.css}">
 </head>
 
 <body>
 	<h1 th:text="${message}"></h1>
 	<form method="get" action="#" th:action="@{/chat}" th:object="${chat}">
 		<p>
-			お名前： <input type="text" name="name" th:value="*{name}">
-			コメント： <input type="text" name="comment" th:value="*{comment}">
-			<input type="submit" value="送信">
+			<input type="text" name="name" placeholder="お名前" th:value="*{name}">
+			： <input id=commentF type="text" name="comment" placeholder="コメント:500文字まで。Enterキーでも投稿できます。"
+				th:value="*{comment}">
+
+			<input type="submit" value="投稿">
+		<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">エラー</div>
+		<div th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}">エラー</div>
 		</p>
-		</p><a href="" th:href="@{/h2-console}" target="_blank">H2コンソール(別タブで開く)</a>
+		</p><a href="" th:href="@{/top}" target="_blank">トップページへ</a>
+		<a href="" th:href="@{/manager}" target="_blank">管理画面へ</a>
 
+		<hr>
 
+		<table>
 
-		<!--			<form method="get" action="#" th:action="@{/confirm}">-->
-		<!--				<p>ToDo入力： <input type="text" name="content" th:value="*{content}"></p>-->
-		<!--				<p>優先度： <input type="text" name="priority" th:value="*{priority}"></p>-->
-		<!--				<p>チェックリスト： <input type="text" name="compFlag" th:value="*{compFlag}"></p>-->
-
-
-		<!--						<div th:if="${#fields.hasErrors('name1')}"  th:errors="*{name1}">エラー</div>-->
-		<!--						<div th:if="${#fields.hasErrors('comment')}"  th:errors="*{comment}">エラー</div>-->
-		<!--						<p>コメント： <input type="text" name="comment" th:value="*{comment}"></p>-->
-		<!--					</form>-->
-		<!--				<input type="submit" value="送信">-->
-
-
-
+			<tr th:each="res : ${dbList}">
+				<td id="name" th:text="${res.name}">名前</td>
+				<td id="comment" th:text="${res.comment}">コメント</td>
 </body>
 
 </html>
